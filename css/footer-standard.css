@@ -14,7 +14,7 @@
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--card-border);
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-sans);
 }
 
 .site-header-inner {
@@ -229,7 +229,7 @@
 .site-footer {
   border-top: 1px solid var(--card-border);
   background: #fafafa;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-sans);
   color: var(--foreground);
 }
 
