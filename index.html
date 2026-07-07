@@ -14,57 +14,16 @@
 <link rel="stylesheet" href="css/brand-tokens.css">
 <link rel="stylesheet" href="css/footer-standard.css">
 <link rel="stylesheet" href="css/style.css">
+<script src="https://cdn.jsdelivr.net/gh/titohnf/design-system@main/tera-header.js" defer></script>
 </head>
 <body>
 
-<header class="site-header" id="site-header">
-  <div class="site-header-inner">
-    <a href="/" class="site-logo">
-      <img src="img/logo-tera.png" alt="Tera" class="site-logo-img">
-      <span class="site-logo-text">Tera</span>
-    </a>
-
-    <nav class="site-nav">
-      <a href="/" class="nav-link active">Beranda</a>
-      <a href="/tentang" class="nav-link">Tentang Kami</a>
-
-      <div class="nav-group" id="nav-group">
-        <button type="button" class="nav-group-badge" id="nav-group-btn" aria-expanded="false">
-          Bagian dari Tera Group
-          <svg class="chevron" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 11.19l3.71-3.96a.75.75 0 1 1 1.08 1.04l-4.25 4.5a.75.75 0 0 1-1.08 0l-4.25-4.5a.75.75 0 0 1 .02-1.06z" clip-rule="evenodd"/>
-          </svg>
-        </button>
-        <div class="nav-group-menu" id="nav-group-menu">
-          <a href="https://bimbeltera.com">Bimbel Tera</a>
-          <a href="https://terafoundation.or.id">Tera Foundation</a>
-          <a href="https://komunitas.tera.or.id">Komunitas Tera</a>
-        </div>
-      </div>
-    </nav>
-
-    <button type="button" class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Buka menu" aria-expanded="false">
-      <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <line x1="3" y1="6" x2="21" y2="6"/>
-        <line x1="3" y1="12" x2="21" y2="12"/>
-        <line x1="3" y1="18" x2="21" y2="18"/>
-      </svg>
-      <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <line x1="18" y1="6" x2="6" y2="18"/>
-        <line x1="6" y1="6" x2="18" y2="18"/>
-      </svg>
-    </button>
-  </div>
-
-  <div class="mobile-nav" id="mobile-nav">
-    <a href="/" class="nav-link active">Beranda</a>
-    <a href="/tentang" class="nav-link">Tentang Kami</a>
-    <div class="mobile-nav-group-label">Bagian dari Tera Group</div>
-    <a href="https://bimbeltera.com" class="mobile-nav-sub">Bimbel Tera</a>
-    <a href="https://terafoundation.or.id" class="mobile-nav-sub">Tera Foundation</a>
-    <a href="https://komunitas.tera.or.id" class="mobile-nav-sub">Komunitas Tera</a>
-  </div>
-</header>
+<tera-header
+  logo-text="Tera"
+  logo-img="img/logo-tera.png"
+  logo-href="/"
+  nav='[{"label":"Beranda","href":"/"},{"label":"Tentang Kami","href":"/tentang"}]'
+></tera-header>
 
 <!-- ==================== HERO ==================== -->
 <header class="hero">
