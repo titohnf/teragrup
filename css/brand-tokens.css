@@ -1,0 +1,21 @@
+/* =========================================================
+   TERA GROUP — BRAND TOKENS
+   Variabel warna & font yang dipakai di semua web TERA Group.
+   File ini SAMA PERSIS di ketiga web (tera.or.id, bimbeltera.com,
+   terafoundation.or.id, komunitas.tera.or.id).
+   ========================================================= */
+
+:root {
+  --tera-primary: #1E5F74;
+  --tera-primary-dark: #133C4A;
+  --tera-accent: #F2A007;
+  --tera-text-light: #FFFFFF;
+  --tera-text-dark: #1A1A1A;
+  --tera-text-muted: #5C6B70;
+  --tera-bg-light: #F7F9FA;
+  --tera-bg-card: #FFFFFF;
+  --tera-border: #E3E8EA;
+
+  --tera-font-heading: 'Poppins', sans-serif;
+  --tera-font-body: 'Inter', sans-serif;
+}

@@ -1,0 +1,297 @@
+/* =========================================================
+   TERA.OR.ID — HOMEPAGE STYLE
+   Style khusus halaman ini. Token warna & font ada di
+   brand-tokens.css, struktur footer ada di footer-standard.css.
+   ========================================================= */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--tera-font-body);
+  color: var(--tera-text-dark);
+  background: var(--tera-bg-light);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--tera-font-heading);
+  margin: 0;
+}
+
+a {
+  font-family: var(--tera-font-body);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* -------------------- NAVBAR -------------------- */
+.tera-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--tera-bg-card);
+  border-bottom: 1px solid var(--tera-border);
+}
+
+.tera-nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+}
+
+.tera-nav-logo {
+  font-family: var(--tera-font-heading);
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--tera-primary);
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+
+.tera-nav-logo span {
+  color: var(--tera-accent);
+}
+
+/* -------------------- BUTTONS -------------------- */
+.btn {
+  display: inline-block;
+  font-family: var(--tera-font-body);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 999px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.btn-primary {
+  background: var(--tera-accent);
+  color: var(--tera-primary-dark);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(242, 160, 7, 0.35);
+}
+
+/* -------------------- HERO -------------------- */
+.hero {
+  padding: 96px 0 112px;
+  background: linear-gradient(180deg, var(--tera-bg-light) 0%, #ffffff 100%);
+}
+
+.hero-line {
+  max-width: 760px;
+  margin: 0 auto 64px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.hero-line:last-child {
+  margin-bottom: 0;
+}
+
+.hero-line.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-line p {
+  font-family: var(--tera-font-heading);
+  font-size: clamp(22px, 3.4vw, 34px);
+  font-weight: 600;
+  color: var(--tera-primary-dark);
+  line-height: 1.4;
+  margin-bottom: 18px;
+}
+
+/* -------------------- STATS -------------------- */
+.stats {
+  background: var(--tera-primary-dark);
+  padding: 64px 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  text-align: center;
+}
+
+.stat-number {
+  font-family: var(--tera-font-heading);
+  font-size: clamp(30px, 4vw, 44px);
+  font-weight: 700;
+  color: var(--tera-accent);
+  line-height: 1.2;
+}
+
+.stat-label {
+  margin-top: 8px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* -------------------- TESTIMONIALS -------------------- */
+.testimonials {
+  padding: 88px 0;
+}
+
+.section-heading {
+  text-align: center;
+  font-size: clamp(24px, 3vw, 32px);
+  color: var(--tera-primary-dark);
+  margin-bottom: 48px;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.testimonial-card {
+  background: var(--tera-bg-card);
+  border: 1px solid var(--tera-border);
+  border-radius: 16px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial-tag {
+  align-self: flex-start;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--tera-primary);
+  background: rgba(30, 95, 116, 0.08);
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+}
+
+.testimonial-quote {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--tera-text-dark);
+  flex-grow: 1;
+  margin: 0 0 20px;
+}
+
+.testimonial-author {
+  font-size: 13.5px;
+  color: var(--tera-text-muted);
+}
+
+.testimonial-author strong {
+  display: block;
+  color: var(--tera-text-dark);
+  font-size: 14.5px;
+  margin-bottom: 2px;
+}
+
+/* -------------------- FOUNDERS -------------------- */
+.founders {
+  padding: 88px 0;
+  background: var(--tera-bg-light);
+}
+
+.founders-inner {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 40px;
+  align-items: center;
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.founder-photo-placeholder {
+  width: 220px;
+  height: 220px;
+  border-radius: 16px;
+  background: var(--tera-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.founder-photo-placeholder svg {
+  width: 88px;
+  height: 88px;
+  color: #ffffff;
+}
+
+.founder-name {
+  font-size: clamp(20px, 2.6vw, 26px);
+  color: var(--tera-primary-dark);
+  margin-bottom: 4px;
+}
+
+.founder-role {
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--tera-accent);
+  margin-bottom: 16px;
+}
+
+.founder-story {
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--tera-text-muted);
+  margin: 0;
+}
+
+/* -------------------- RESPONSIVE -------------------- */
+@media (max-width: 860px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 40px;
+  }
+
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .founders-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+    justify-items: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+    row-gap: 32px;
+  }
+
+  .hero {
+    padding: 72px 0 80px;
+  }
+
+  .hero-line {
+    margin-bottom: 48px;
+  }
+}

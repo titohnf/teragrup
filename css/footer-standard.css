@@ -1,0 +1,111 @@
+/* =========================================================
+   TERA GROUP — FOOTER STANDAR (4 kolom + copyright)
+   File ini SAMA PERSIS di ketiga web.
+   Struktur:
+   Row 1: 4 kolom (Logo+deskripsi | Menu | Link 3 web TERA | Kontak)
+   Row 2: Copyright
+   ========================================================= */
+
+:root {
+  --tera-primary: #1E5F74;
+  --tera-primary-dark: #133C4A;
+  --tera-accent: #F2A007;
+  --tera-text-light: #FFFFFF;
+  --tera-font-heading: 'Poppins', sans-serif;
+  --tera-font-body: 'Inter', sans-serif;
+}
+
+.tera-footer {
+  background: var(--tera-primary-dark);
+  color: var(--tera-text-light);
+  font-family: var(--tera-font-body);
+  padding: 48px 24px 0;
+}
+
+/* ROW 1: 4 kolom */
+.tera-footer-row1 {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 32px;
+  padding-bottom: 32px;
+}
+
+.tera-footer-col h4 {
+  font-family: var(--tera-font-heading);
+  font-size: 14px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--tera-accent);
+  margin: 0 0 14px;
+}
+
+/* Kolom 1: logo + deskripsi */
+.tera-footer-brand img {
+  height: 32px;
+  margin-bottom: 12px;
+}
+
+.tera-footer-brand p {
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.75);
+  margin: 0;
+}
+
+/* Kolom 2, 3, 4: daftar link */
+.tera-footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tera-footer-col li {
+  margin-bottom: 10px;
+}
+
+.tera-footer-col a {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  font-size: 13.5px;
+  transition: color 0.15s;
+}
+
+.tera-footer-col a:hover {
+  color: var(--tera-text-light);
+  text-decoration: underline;
+}
+
+/* Kolom 3 khusus: link ke web TERA lain, kasih penanda kecil "sedang dibuka" */
+.tera-footer-col a.is-current {
+  color: var(--tera-accent);
+  font-weight: 600;
+  pointer-events: none;
+}
+
+/* Kolom 4: kontak, boleh ada icon/text biasa */
+.tera-footer-col address {
+  font-style: normal;
+  font-size: 13.5px;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.8);
+}
+
+/* ROW 2: copyright */
+.tera-footer-row2 {
+  border-top: 1px solid rgba(255,255,255,0.15);
+  text-align: center;
+  padding: 18px 0;
+  font-size: 12.5px;
+  color: rgba(255,255,255,0.55);
+}
+
+/* Responsive: tablet jadi 2 kolom, mobile jadi 1 kolom */
+@media (max-width: 860px) {
+  .tera-footer-row1 { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 500px) {
+  .tera-footer-row1 { grid-template-columns: 1fr; }
+}
