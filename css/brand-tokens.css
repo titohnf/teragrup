@@ -1,24 +1,8 @@
 /* =========================================================
    TERA GROUP — BRAND TOKENS
-   Variabel warna & font yang dipakai di semua web TERA Group.
-   Direplikasi persis dari komunitastera (Next.js + Tailwind) agar
-   semua web TERA Group (tera.or.id, bimbeltera.com,
-   terafoundation.or.id, komunitas.tera.or.id) punya tampilan yang
-   konsisten. File ini SAMA PERSIS di semua web tersebut.
+   Warna & font sekarang diambil dari CDN design-system
+   (https://cdn.jsdelivr.net/gh/titohnf/design-system@main/tokens.css),
+   di-link di <head> SEBELUM file ini. Jangan definisikan ulang
+   --background, --foreground, --primary, dst di sini — edit di
+   repo design-system agar tersinkron ke semua web TERA Group.
    ========================================================= */
-
-:root {
-  --background: #f5f8ff;
-  --foreground: #101828;
-  --card: #ffffff;
-  --card-border: #e1e9fb;
-  --primary: #0d6efd;
-  --primary-dark: #0b57d0;
-  --primary-foreground: #ffffff;
-  --accent: #d9a441;
-  --secondary: #5b8def;
-  --muted: #5b6472;
-  --muted-bg: #eaf1ff;
-
-  --font-sans: 'Inter', sans-serif;
-}
