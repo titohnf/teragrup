@@ -18,4 +18,17 @@
 
   --tera-font-heading: 'Poppins', sans-serif;
   --tera-font-body: 'Inter', sans-serif;
+
+  /* ---- Shared header/footer tokens (komunitastera) ---- */
+  --background: #f5f8ff;
+  --foreground: #101828;
+  --card: #ffffff;
+  --card-border: #e1e9fb;
+  --primary: #0d6efd;
+  --primary-dark: #0b57d0;
+  --primary-foreground: #ffffff;
+  --accent: #d9a441;
+  --secondary: #5b8def;
+  --muted: #5b6472;
+  --muted-bg: #eaf1ff;
 }

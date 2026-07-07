@@ -1,111 +1,330 @@
 /* =========================================================
-   TERA GROUP — FOOTER STANDAR (4 kolom + copyright)
-   File ini SAMA PERSIS di ketiga web.
-   Struktur:
-   Row 1: 4 kolom (Logo+deskripsi | Menu | Link 3 web TERA | Kontak)
-   Row 2: Copyright
+   TERA GROUP — HEADER & FOOTER STANDAR
+   Direplikasi dari komunitastera (Next.js + Tailwind) agar semua
+   web TERA Group punya header/footer yang konsisten secara visual.
+   Token warna ada di brand-tokens.css.
    ========================================================= */
 
-:root {
-  --tera-primary: #1E5F74;
-  --tera-primary-dark: #133C4A;
-  --tera-accent: #F2A007;
-  --tera-text-light: #FFFFFF;
-  --tera-font-heading: 'Poppins', sans-serif;
-  --tera-font-body: 'Inter', sans-serif;
+/* -------------------- HEADER -------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--card-border);
+  font-family: 'Inter', sans-serif;
 }
 
-.tera-footer {
-  background: var(--tera-primary-dark);
-  color: var(--tera-text-light);
-  font-family: var(--tera-font-body);
-  padding: 48px 24px 0;
-}
-
-/* ROW 1: 4 kolom */
-.tera-footer-row1 {
-  max-width: 1140px;
+.site-header-inner {
+  max-width: 1152px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 1fr;
-  gap: 32px;
-  padding-bottom: 32px;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.tera-footer-col h4 {
-  font-family: var(--tera-font-heading);
-  font-size: 14px;
-  letter-spacing: 0.03em;
+.site-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--foreground);
+}
+
+.site-logo-img {
+  height: 36px;
+  width: auto;
+  display: block;
+}
+
+.site-logo-text {
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--foreground);
+}
+
+/* Desktop nav */
+.site-nav {
+  display: none;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 14.5px;
+  font-weight: 500;
+  color: rgba(16, 24, 40, 0.8);
+  padding: 8px 16px;
+  border-radius: 999px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.nav-link:hover {
+  background: var(--muted-bg);
+}
+
+.nav-link.active {
+  background: var(--muted-bg);
+  color: var(--primary-dark);
+}
+
+/* "Bagian dari Tera Group" pill + dropdown */
+.nav-group {
+  position: relative;
+  margin-left: 4px;
+}
+
+.nav-group-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary-dark);
+  background: var(--muted-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 999px;
+  padding: 7px 14px;
+  cursor: pointer;
+}
+
+.nav-group-badge:hover {
+  background: #dfeaff;
+}
+
+.nav-group-badge .chevron {
+  width: 10px;
+  height: 10px;
+  transition: transform 0.15s ease;
+}
+
+.nav-group.is-open .nav-group-badge .chevron {
+  transform: rotate(180deg);
+}
+
+.nav-group-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 220px;
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(16, 24, 40, 0.12);
+  padding: 6px;
+  z-index: 60;
+}
+
+.nav-group.is-open .nav-group-menu {
+  display: block;
+}
+
+.nav-group-menu a {
+  display: block;
+  text-decoration: none;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--foreground);
+  padding: 9px 12px;
+  border-radius: 8px;
+}
+
+.nav-group-menu a:hover {
+  background: var(--muted-bg);
+  color: var(--primary-dark);
+}
+
+/* Mobile hamburger */
+.mobile-menu-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  color: var(--foreground);
+  cursor: pointer;
+}
+
+.mobile-menu-btn svg {
+  width: 24px;
+  height: 24px;
+}
+
+.mobile-menu-btn .icon-close {
+  display: none;
+}
+
+.site-header.is-mobile-open .icon-menu {
+  display: none;
+}
+
+.site-header.is-mobile-open .icon-close {
+  display: block;
+}
+
+/* Mobile dropdown nav */
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  border-top: 1px solid var(--card-border);
+  padding: 8px 24px 16px;
+}
+
+.site-header.is-mobile-open .mobile-nav {
+  display: flex;
+}
+
+.mobile-nav .nav-link {
+  padding: 11px 12px;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.mobile-nav-group-label {
+  margin: 10px 0 4px;
+  padding: 0 12px;
+  font-size: 12px;
+  font-weight: 600;
   text-transform: uppercase;
-  color: var(--tera-accent);
+  letter-spacing: 0.03em;
+  color: var(--muted);
+}
+
+.mobile-nav a.mobile-nav-sub {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--foreground);
+  padding: 10px 12px;
+  border-radius: 10px;
+}
+
+.mobile-nav a.mobile-nav-sub:hover {
+  background: var(--muted-bg);
+}
+
+@media (min-width: 768px) {
+  .site-nav {
+    display: flex;
+  }
+
+  .mobile-menu-btn {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: none !important;
+  }
+}
+
+/* -------------------- FOOTER -------------------- */
+.site-footer {
+  border-top: 1px solid var(--card-border);
+  background: #fafafa;
+  font-family: 'Inter', sans-serif;
+  color: var(--foreground);
+}
+
+.site-footer-inner {
+  max-width: 1152px;
+  margin: 0 auto;
+  padding: 48px 24px 32px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+.footer-col h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--foreground);
   margin: 0 0 14px;
 }
 
-/* Kolom 1: logo + deskripsi */
-.tera-footer-brand img {
-  height: 32px;
-  margin-bottom: 12px;
-}
-
-.tera-footer-brand p {
-  font-size: 13.5px;
-  line-height: 1.7;
-  color: rgba(255,255,255,0.75);
-  margin: 0;
-}
-
-/* Kolom 2, 3, 4: daftar link */
-.tera-footer-col ul {
+.footer-col ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.tera-footer-col li {
+.footer-col li {
   margin-bottom: 10px;
 }
 
-.tera-footer-col a {
-  color: rgba(255,255,255,0.8);
+.footer-col a {
   text-decoration: none;
   font-size: 13.5px;
-  transition: color 0.15s;
+  color: var(--muted);
+  transition: color 0.15s ease;
 }
 
-.tera-footer-col a:hover {
-  color: var(--tera-text-light);
-  text-decoration: underline;
+.footer-col a:hover {
+  color: var(--primary-dark);
 }
 
-/* Kolom 3 khusus: link ke web TERA lain, kasih penanda kecil "sedang dibuka" */
-.tera-footer-col a.is-current {
-  color: var(--tera-accent);
-  font-weight: 600;
-  pointer-events: none;
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-/* Kolom 4: kontak, boleh ada icon/text biasa */
-.tera-footer-col address {
-  font-style: normal;
+.footer-logo-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 1px solid var(--card-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.footer-logo-circle img {
+  height: 26px;
+  width: auto;
+  display: block;
+}
+
+.footer-brand-name {
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--foreground);
+  margin-bottom: 10px;
+}
+
+.footer-brand p {
   font-size: 13.5px;
-  line-height: 1.8;
-  color: rgba(255,255,255,0.8);
+  line-height: 1.7;
+  color: rgba(16, 24, 40, 0.7);
+  margin: 0;
 }
 
-/* ROW 2: copyright */
-.tera-footer-row2 {
-  border-top: 1px solid rgba(255,255,255,0.15);
+.site-footer-bottom {
+  border-top: 1px solid var(--card-border);
   text-align: center;
-  padding: 18px 0;
+  padding: 16px 24px;
   font-size: 12.5px;
-  color: rgba(255,255,255,0.55);
+  color: var(--muted);
 }
 
-/* Responsive: tablet jadi 2 kolom, mobile jadi 1 kolom */
 @media (max-width: 860px) {
-  .tera-footer-row1 { grid-template-columns: 1fr 1fr; }
+  .site-footer-inner {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media (max-width: 500px) {
-  .tera-footer-row1 { grid-template-columns: 1fr; }
+  .site-footer-inner {
+    grid-template-columns: 1fr;
+  }
 }

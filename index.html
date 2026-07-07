@@ -16,11 +16,54 @@
 </head>
 <body>
 
-<nav class="tera-nav">
-  <div class="tera-nav-inner">
-    <a href="/" class="tera-nav-logo">TERA<span>.</span>GROUP</a>
+<header class="site-header" id="site-header">
+  <div class="site-header-inner">
+    <a href="/" class="site-logo">
+      <img src="img/logo-tera.png" alt="Tera" class="site-logo-img">
+      <span class="site-logo-text">Tera</span>
+    </a>
+
+    <nav class="site-nav">
+      <a href="/" class="nav-link active">Beranda</a>
+      <a href="/tentang" class="nav-link">Tentang Kami</a>
+
+      <div class="nav-group" id="nav-group">
+        <button type="button" class="nav-group-badge" id="nav-group-btn" aria-expanded="false">
+          Bagian dari Tera Group
+          <svg class="chevron" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 11.19l3.71-3.96a.75.75 0 1 1 1.08 1.04l-4.25 4.5a.75.75 0 0 1-1.08 0l-4.25-4.5a.75.75 0 0 1 .02-1.06z" clip-rule="evenodd"/>
+          </svg>
+        </button>
+        <div class="nav-group-menu" id="nav-group-menu">
+          <a href="https://bimbeltera.com">Bimbel Tera</a>
+          <a href="https://terafoundation.or.id">Tera Foundation</a>
+          <a href="https://komunitas.tera.or.id">Komunitas Tera</a>
+        </div>
+      </div>
+    </nav>
+
+    <button type="button" class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Buka menu" aria-expanded="false">
+      <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+      <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="18" y1="6" x2="6" y2="18"/>
+        <line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
   </div>
-</nav>
+
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="/" class="nav-link active">Beranda</a>
+    <a href="/tentang" class="nav-link">Tentang Kami</a>
+    <div class="mobile-nav-group-label">Bagian dari Tera Group</div>
+    <a href="https://bimbeltera.com" class="mobile-nav-sub">Bimbel Tera</a>
+    <a href="https://terafoundation.or.id" class="mobile-nav-sub">Tera Foundation</a>
+    <a href="https://komunitas.tera.or.id" class="mobile-nav-sub">Komunitas Tera</a>
+  </div>
+</header>
 
 <!-- ==================== HERO ==================== -->
 <header class="hero">
@@ -142,11 +185,14 @@
 </section>
 
 <!-- ==================== FOOTER ==================== -->
-<footer class="tera-footer">
-  <div class="tera-footer-row1">
+<footer class="site-footer">
+  <div class="site-footer-inner">
 
-    <div class="tera-footer-col tera-footer-brand">
-      <img src="/img/logo-tera.png" alt="TERA Group">
+    <div class="footer-col footer-brand">
+      <div class="footer-logo-circle">
+        <img src="img/logo-tera.png" alt="Tera">
+      </div>
+      <span class="footer-brand-name">Tera</span>
       <p>
         TERA Group menaungi Bimbel Tera, Tera Foundation, dan Tera
         Community untuk memastikan setiap anak punya kesempatan yang
@@ -154,36 +200,35 @@
       </p>
     </div>
 
-    <div class="tera-footer-col">
-      <h4>Menu</h4>
+    <div class="footer-col">
+      <h4>Jelajahi</h4>
       <ul>
         <li><a href="/">Beranda</a></li>
-        <li><a href="#">Tentang Tera</a></li>
+        <li><a href="/tentang">Tentang Kami</a></li>
       </ul>
     </div>
 
-    <div class="tera-footer-col">
-      <h4>TERA Group</h4>
+    <div class="footer-col">
+      <h4>Bagian dari Tera</h4>
       <ul>
         <li><a href="https://bimbeltera.com">Bimbel Tera</a></li>
         <li><a href="https://terafoundation.or.id">Tera Foundation</a></li>
-        <li><a href="https://komunitas.tera.or.id">Tera Community</a></li>
+        <li><a href="https://komunitas.tera.or.id">Komunitas Tera</a></li>
       </ul>
     </div>
 
-    <div class="tera-footer-col">
+    <div class="footer-col">
       <h4>Kontak</h4>
-      <address>
-        Email: info@tera.or.id<br>
-        WhatsApp: 08xx-xxxx-xxxx<br>
-        Instagram: @teragroup
-      </address>
+      <ul>
+        <li><a href="mailto:teralearningcenter.id@gmail.com">teralearningcenter.id@gmail.com</a></li>
+        <li><a href="https://instagram.com/insantera">@insantera</a></li>
+      </ul>
     </div>
 
   </div>
 
-  <div class="tera-footer-row2">
-    &copy; 2026 TERA Group. Seluruh hak cipta dilindungi.
+  <div class="site-footer-bottom">
+    &copy; <span id="footer-year"></span> Tera. Bagian dari ekosistem yang berkomitmen pada pendidikan yang lebih baik.
   </div>
 </footer>
 
