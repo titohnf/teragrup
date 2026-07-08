@@ -1,7 +1,7 @@
 /* =========================================================
    TERA GROUP — BRAND TOKENS
-   Warna & font sekarang diambil dari CDN design-system
-   (https://cdn.jsdelivr.net/gh/titohnf/design-system@main/tokens.css),
+   Warna & font sekarang diambil dari CDN design-system, pinned ke
+   commit SHA (bukan @main) supaya konsisten di semua browser/CDN edge,
    di-link di <head> SEBELUM file ini. Jangan definisikan ulang
    --background, --foreground, --primary, dst di sini — edit di
    repo design-system agar tersinkron ke semua web TERA Group.

@@ -10,11 +10,17 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/titohnf/design-system@main/tokens.css">
+<!-- Pinned to a commit SHA (not @main) so every visitor/browser/CDN edge
+     always gets the exact same file — @main is mutable and jsDelivr caches
+     it for up to 7 days per-edge, so different users could see different
+     versions at the same time. Bump the SHA deliberately after each
+     design-system change; run purge-cdn.sh if you need the new SHA to be
+     fetched immediately instead of waiting for jsDelivr's own cache. -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/titohnf/design-system@d269a1c1d68f9d9ced43ef5fc74b17d8369e7c8f/tokens.css">
 <link rel="stylesheet" href="css/brand-tokens.css">
 <link rel="stylesheet" href="css/footer-standard.css">
 <link rel="stylesheet" href="css/style.css">
-<script src="https://cdn.jsdelivr.net/gh/titohnf/design-system@main/tera-header.js" defer></script>
+<script src="https://cdn.jsdelivr.net/gh/titohnf/design-system@d269a1c1d68f9d9ced43ef5fc74b17d8369e7c8f/tera-header.js" defer></script>
 </head>
 <body>
 
@@ -27,30 +33,82 @@
 
 <!-- ==================== HERO ==================== -->
 <header class="hero">
-  <div class="container">
+  <div class="hero-glow"></div>
+  <div class="hero-glow two"></div>
 
-    <div class="hero-line">
-      <p>Menciptakan tempat dimana setiap anak bebas bermimpi</p>
-      <a href="#" class="btn btn-primary">Tentang Tera</a>
+  <div class="hero-inner">
+    <div class="hero-main">
+      <span class="hero-eyebrow"><span class="dot"></span>Misi Kami</span>
+      <p class="hero-main-text">Menciptakan tempat dimana setiap anak bebas bermimpi.</p>
+      <a href="#" class="btn-hero-primary">Tentang Tera
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 10h12M11 5l5 5-5 5"/></svg>
+      </a>
     </div>
-
-    <div class="hero-line">
-      <p>Melalui pendidikan yang memeluk setiap potensi</p>
-      <a href="https://bimbeltera.com" class="btn btn-primary">Mulai Belajar</a>
-    </div>
-
-    <div class="hero-line">
-      <p>Memberikan kesempatan yang sama untuk semua</p>
-      <a href="https://terafoundation.or.id" class="btn btn-primary">Ikut Berkontribusi</a>
-    </div>
-
-    <div class="hero-line">
-      <p>Berhimpun dalam ruang untuk tumbuh bersama</p>
-      <a href="https://komunitas.tera.or.id" class="btn btn-primary">Gabung Komunitas</a>
-    </div>
-
   </div>
 </header>
+
+<!-- ==================== HERO CARD SEQUENCE ====================
+     Lives OUTSIDE <header> on purpose: the hero's overflow:hidden
+     (used to clip the glow blobs) would otherwise break position:sticky
+     on these cards. -->
+<div class="hero-pin" id="heroPin">
+  <div class="hero-pin-sticky">
+    <div class="hero-frame">
+      <div class="hero-carousel-strip" id="heroStrip">
+
+        <div class="hero-card is-current" data-tone="b">
+          <canvas class="hero-card-photo"></canvas>
+          <video class="hero-card-video" autoplay muted loop playsinline preload="auto"
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4"></video>
+          <span class="hero-card-num">01 — BIMBEL TERA</span>
+          <div class="hero-card-body">
+            <p>Melalui pendidikan yang memeluk setiap potensi.</p>
+            <a href="https://bimbeltera.com" class="hero-cta">Mulai Belajar
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 10h12M11 5l5 5-5 5"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-card" data-tone="c">
+          <canvas class="hero-card-photo"></canvas>
+          <video class="hero-card-video" autoplay muted loop playsinline preload="auto"
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"></video>
+          <span class="hero-card-num">02 — TERA FOUNDATION</span>
+          <div class="hero-card-body">
+            <p>Memberikan kesempatan yang sama untuk semua.</p>
+            <a href="https://terafoundation.or.id" class="hero-cta">Ikut Berkontribusi
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 10h12M11 5l5 5-5 5"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-card" data-tone="d">
+          <canvas class="hero-card-photo"></canvas>
+          <video class="hero-card-video" autoplay muted loop playsinline preload="auto"
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"></video>
+          <span class="hero-card-num">03 — TERA COMMUNITY</span>
+          <div class="hero-card-body">
+            <p>Berhimpun dalam ruang untuk tumbuh bersama.</p>
+            <a href="https://komunitas.tera.or.id" class="hero-cta">Gabung Komunitas
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 10h12M11 5l5 5-5 5"/></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="hero-dots" id="heroDots">
+        <span class="hero-dot is-active" data-index="0"></span>
+        <span class="hero-dot" data-index="1"></span>
+        <span class="hero-dot" data-index="2"></span>
+      </div>
+
+      <div class="hero-scroll-hint" id="heroHint">
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 8l5 5 5-5"/></svg>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- ==================== STATS ==================== -->
 <section class="stats">
