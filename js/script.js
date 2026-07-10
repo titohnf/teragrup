@@ -4,15 +4,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   initHeroSequence();
   initCountUp();
-  initFooterYear();
 });
-
-function initFooterYear() {
-  const el = document.getElementById('footer-year');
-  if (el) {
-    el.textContent = new Date().getFullYear();
-  }
-}
 
 // Pinned hero card sequence: paints a gradient placeholder behind each
 // video (fallback while the video loads / if it's blocked), then maps

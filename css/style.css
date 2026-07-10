@@ -1,8 +1,8 @@
 /* =========================================================
    TERA.OR.ID — HOMEPAGE STYLE
    Style khusus halaman ini. Token warna & font diambil dari CDN
-   design-system (lihat brand-tokens.css), struktur footer ada di
-   footer-standard.css.
+   design-system (lihat brand-tokens.css); header dan footer datang
+   dari <tera-header>/<tera-footer> (juga dari CDN design-system).
    ========================================================= */
 
 :root {

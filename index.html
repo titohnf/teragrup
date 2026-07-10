@@ -16,11 +16,11 @@
      versions at the same time. Bump the SHA deliberately after each
      design-system change; run purge-cdn.sh if you need the new SHA to be
      fetched immediately instead of waiting for jsDelivr's own cache. -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/titohnf/design-system@5d4c12da4e01fa8e11bf8ed8338d5861da51ea44/tokens.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/titohnf/design-system@117e539a8e8f65b73872f45379fb86551de6e230/tokens.css">
 <link rel="stylesheet" href="css/brand-tokens.css">
-<link rel="stylesheet" href="css/footer-standard.css">
 <link rel="stylesheet" href="css/style.css">
-<script src="https://cdn.jsdelivr.net/gh/titohnf/design-system@5d4c12da4e01fa8e11bf8ed8338d5861da51ea44/tera-header.js" defer></script>
+<script src="https://cdn.jsdelivr.net/gh/titohnf/design-system@117e539a8e8f65b73872f45379fb86551de6e230/tera-header.js" defer></script>
+<script src="https://cdn.jsdelivr.net/gh/titohnf/design-system@117e539a8e8f65b73872f45379fb86551de6e230/tera-footer.js" defer></script>
 </head>
 <body>
 
@@ -203,52 +203,14 @@
 </section>
 
 <!-- ==================== FOOTER ==================== -->
-<footer class="site-footer">
-  <div class="site-footer-inner">
-
-    <div class="footer-col footer-brand">
-      <div class="footer-logo-circle">
-        <img src="img/logo-tera.png" alt="Tera">
-      </div>
-      <span class="footer-brand-name">Tera</span>
-      <p>
-        TERA Group menaungi Bimbel Tera, Tera Foundation, dan Tera
-        Community untuk memastikan setiap anak punya kesempatan yang
-        sama untuk bertumbuh, belajar, dan berkontribusi.
-      </p>
-    </div>
-
-    <div class="footer-col">
-      <h4>Jelajahi</h4>
-      <ul>
-        <li><a href="/">Beranda</a></li>
-        <li><a href="/tentang">Tentang Kami</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-col">
-      <h4>Bagian dari Tera</h4>
-      <ul>
-        <li><a href="https://bimbeltera.com" target="_blank" rel="noopener">Bimbel Tera</a></li>
-        <li><a href="https://terafoundation.or.id" target="_blank" rel="noopener">Tera Foundation</a></li>
-        <li><a href="https://komunitas.tera.or.id" target="_blank" rel="noopener">Komunitas Tera</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-col">
-      <h4>Kontak</h4>
-      <ul>
-        <li><a href="mailto:teralearningcenter.id@gmail.com">teralearningcenter.id@gmail.com</a></li>
-        <li><a href="https://instagram.com/insantera">@insantera</a></li>
-      </ul>
-    </div>
-
-  </div>
-
-  <div class="site-footer-bottom">
-    &copy; <span id="footer-year"></span> Tera. Bagian dari ekosistem yang berkomitmen pada pendidikan yang lebih baik.
-  </div>
-</footer>
+<tera-footer
+  site="tera"
+  logo-text="Tera"
+  logo-img="img/logo-tera.png"
+  description="TERA Group menaungi Bimbel Tera, Tera Foundation, dan Tera Community untuk memastikan setiap anak punya kesempatan yang sama untuk bertumbuh, belajar, dan berkontribusi."
+  nav='[{"label":"Beranda","href":"/"},{"label":"Tentang Kami","href":"/tentang"}]'
+  contact='[{"text":"teralearningcenter.id@gmail.com","href":"mailto:teralearningcenter.id@gmail.com"},{"text":"@insantera","href":"https://instagram.com/insantera"}]'
+></tera-footer>
 
 <script src="js/script.js"></script>
 </body>
