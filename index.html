@@ -17,11 +17,10 @@
      versions at the same time. Bump the SHA deliberately after each
      design-system change; run purge-cdn.sh if you need the new SHA to be
      fetched immediately instead of waiting for jsDelivr's own cache. -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/titohnf/design-system@775f63d26f1331e608ebe6b63ad6c676b6f246a2/tokens.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/titohnf/design-system@519855b11cb5f814679017fd33c2b02c84857fa8/tokens.css">
 <link rel="stylesheet" href="css/brand-tokens.css">
 <link rel="stylesheet" href="css/style.css">
-<script src="https://cdn.jsdelivr.net/gh/titohnf/design-system@775f63d26f1331e608ebe6b63ad6c676b6f246a2/tera-header.js" defer></script>
-<script src="https://cdn.jsdelivr.net/gh/titohnf/design-system@775f63d26f1331e608ebe6b63ad6c676b6f246a2/tera-footer.js" defer></script>
+<script src="https://cdn.jsdelivr.net/gh/titohnf/design-system@519855b11cb5f814679017fd33c2b02c84857fa8/tera-header.js" defer></script>
 </head>
 <body>
 
@@ -29,7 +28,8 @@
   logo-text="Tera"
   logo-img="img/logo-tera.png"
   logo-href="/"
-  nav='[{"label":"Beranda","href":"/"},{"label":"Tentang Kami","href":"/tentang"}]'
+  nav='[{"label":"Bimbingan Belajar","href":"https://bimbeltera.com","icon":"<svg viewBox=\"0 0 20 20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M2 4.5C2 4.5 4.5 3.5 7 4.5C9 5.3 10 5.5 10 5.5V16C10 16 9 15.5 7 15C4.5 14.2 2 15 2 15V4.5Z\"/><path d=\"M18 4.5C18 4.5 15.5 3.5 13 4.5C11 5.3 10 5.5 10 5.5V16C10 16 11 15.5 13 15C15.5 14.2 18 15 18 15V4.5Z\"/></svg>"},{"label":"Kontribusi","href":"https://terafoundation.or.id","icon":"<svg viewBox=\"0 0 20 20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M10 17s-6.5-4.02-8.5-8.02C.3 6.2 1.8 3 5 3c2 0 3.5 1.2 5 3 1.5-1.8 3-3 5-3 3.2 0 4.7 3.2 3.5 5.98C16.5 12.98 10 17 10 17z\"/></svg>"},{"label":"Komunitas","href":"https://komunitas.tera.or.id","icon":"<svg viewBox=\"0 0 20 20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"7\" cy=\"6.5\" r=\"2.5\"/><path d=\"M2 16c0-2.8 2.2-5 5-5s5 2.2 5 5\"/><circle cx=\"14.5\" cy=\"7.5\" r=\"2\"/><path d=\"M12.5 11.2c2.2.3 3.5 2 3.5 4.3\"/></svg>"}]'
+  nav-hover="pill"
 ></tera-header>
 
 <!-- ==================== HERO ==================== -->
@@ -145,107 +145,38 @@
   </div>
 </div>
 
-<!-- ==================== STATS ==================== -->
-<section class="stats">
+<!-- ==================== ABOUT / CONTACT ==================== -->
+<section class="about-tera">
   <div class="container">
-    <div class="stats-grid">
+    <h2 class="section-heading">Tentang Tera</h2>
 
-      <div class="stat">
-        <div class="stat-number" data-target="250" data-suffix="+">0</div>
-        <div class="stat-label">Siswa</div>
+    <p class="legal-text">Yayasan Tera inspirasi Bangsa merupakan yayasan yang bergerak dibidang pendidikan, terdaftar secara resmi sesuai SK Menkumham RI dengan Nomor AHU-0017375.AH.01.04.Tahun 2023.</p>
+
+    <div class="contact-card">
+      <div class="contact-map">
+        <iframe
+          src="https://www.google.com/maps?q=-6.4224417,106.812618&z=17&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Lokasi Tera Learning Center"
+        ></iframe>
       </div>
+      <div class="contact-info">
+        <h3>Tera Learning Center</h3>
+        <p>Jl. Rawageni No. 9K Ratujaya, Depok<br>Buka: Senin - Sabtu (09:00 - 21:00)</p>
 
-      <div class="stat">
-        <div class="stat-number" data-target="350" data-prefix="Rp " data-suffix=" Juta">Rp 0 Juta</div>
-        <div class="stat-label">Tersalurkan</div>
+        <h3>Kontak</h3>
+        <p><a href="https://wa.me/6281315502949" target="_blank" rel="noopener">0813 1550 2949 (Whatsapp Admin)</a></p>
       </div>
-
-      <div class="stat">
-        <div class="stat-number" data-target="120" data-suffix="+">0</div>
-        <div class="stat-label">Anggota Komunitas</div>
-      </div>
-
-      <div class="stat">
-        <div class="stat-number" data-target="3">0</div>
-        <div class="stat-label">Tahun Berkarya</div>
-      </div>
-
     </div>
   </div>
 </section>
 
-<!-- ==================== TESTIMONIALS ==================== -->
-<section class="testimonials">
+<footer class="site-copyright">
   <div class="container">
-    <h2 class="section-heading">Apa Kata Mereka</h2>
-
-    <div class="testimonial-grid">
-
-      <div class="testimonial-card">
-        <span class="testimonial-tag">Bimbel Tera</span>
-        <p class="testimonial-quote">"Anak saya jadi lebih percaya diri menghadapi ujian setelah ikut bimbel di sini."</p>
-        <div class="testimonial-author">
-          <strong>[Nama Placeholder]</strong>
-          Orang Tua Siswa
-        </div>
-      </div>
-
-      <div class="testimonial-card">
-        <span class="testimonial-tag">Tera Foundation</span>
-        <p class="testimonial-quote">"Berkat bantuan TERA Foundation, saya bisa terus sekolah walau orang tua saya tidak mampu."</p>
-        <div class="testimonial-author">
-          <strong>[Nama Placeholder]</strong>
-          Penerima Manfaat
-        </div>
-      </div>
-
-      <div class="testimonial-card">
-        <span class="testimonial-tag">Tera Community</span>
-        <p class="testimonial-quote">"Pelatihan dari Tera Community membuka banyak cara mengajar baru yang belum pernah saya coba."</p>
-        <div class="testimonial-author">
-          <strong>[Nama Placeholder]</strong>
-          Anggota Komunitas
-        </div>
-      </div>
-
-    </div>
+    <p>&copy; 2026 TERA Group. Seluruh hak cipta dilindungi.</p>
   </div>
-</section>
-
-<!-- ==================== FOUNDERS ==================== -->
-<section class="founders">
-  <div class="container">
-    <div class="founders-inner">
-
-      <div class="founder-photo-placeholder">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-          <path d="M12 12c2.7 0 8 1.34 8 4v2H4v-2c0-2.66 5.3-4 8-4zm0-2a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"/>
-        </svg>
-      </div>
-
-      <div>
-        <h3 class="founder-name">[Nama Suami] &amp; [Nama Istri]</h3>
-        <div class="founder-role">Pendiri TERA Group</div>
-        <p class="founder-story">
-          Berawal dari keresahan yang sama tentang akses pendidikan, mereka
-          memutuskan membangun TERA Group untuk memastikan setiap anak
-          punya kesempatan yang sama untuk bertumbuh.
-        </p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ==================== FOOTER ==================== -->
-<tera-footer
-  site="tera"
-  logo-text="Tera"
-  logo-img="img/logo-tera.png"
-  description="TERA Group menaungi Bimbel Tera, Tera Foundation, dan Tera Community untuk memastikan setiap anak punya kesempatan yang sama untuk bertumbuh, belajar, dan berkontribusi."
-  nav='[{"label":"Beranda","href":"/"},{"label":"Tentang Kami","href":"/tentang"}]'
-  contact='[{"text":"teralearningcenter.id@gmail.com","href":"mailto:teralearningcenter.id@gmail.com"},{"text":"@insantera","href":"https://instagram.com/insantera"}]'
-></tera-footer>
+</footer>
 
 <script src="js/script.js"></script>
 </body>
