@@ -4,7 +4,43 @@
 document.addEventListener('DOMContentLoaded', () => {
   initHeroSequence();
   initCountUp();
+  initHeroDeconflict();
 });
+
+// Hides any decorative hero photo/emoji that overlaps the headline text —
+// on small screens the (fixed-px) decorative elements take up proportionally
+// more space and can start covering the words, so we just drop whichever
+// ones collide instead of trying to hand-tune breakpoints per element.
+function initHeroDeconflict() {
+  const heroMain = document.querySelector('.hero-main');
+  const targets = document.querySelectorAll('.hero-photo, .hero-emoji');
+  if (!heroMain || !targets.length) return;
+
+  function overlaps(a, b) {
+    return !(a.right < b.left || a.left > b.right || a.bottom < b.top || a.top > b.bottom);
+  }
+
+  function check() {
+    const textRect = heroMain.getBoundingClientRect();
+    targets.forEach((el) => {
+      // display:none (not opacity via class) because the entrance animation's
+      // fill-mode keeps holding the opacity/transform properties even after
+      // it finishes, so a plain CSS opacity override never wins against it.
+      const hide = overlaps(el.getBoundingClientRect(), textRect);
+      el.style.display = hide ? 'none' : '';
+    });
+  }
+
+  // wait for the entrance animations to settle so getBoundingClientRect
+  // reflects each element's resting position, not its mid-animation scale.
+  setTimeout(check, 1700);
+
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(check, 150);
+  });
+}
 
 // Pinned hero card sequence: paints a gradient placeholder behind each
 // video (fallback while the video loads / if it's blocked), then maps
